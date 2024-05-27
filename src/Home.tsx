@@ -1,9 +1,13 @@
 function Home() {
   const lila = "#A0357E"
   const yellow = "#F5D000"
-  /* const pink = "#F400A8"
+  const pink = "#F400A8"
   const blue = "#00EEF5"
-  const green = "#3B7475" */
+  const green = "#3B7475"
+
+  const backgroundColors = [yellow, pink, blue, green];
+
+  const projectPreviews: number[] = [1,2,3,4,5];
 
 
   return (
@@ -13,7 +17,15 @@ function Home() {
       <p style={{color: yellow}}>Test</p>
     </div>
     {/* Project Preview */}
-    <div style={{backgroundColor: yellow}} className="fullscreen">Test 2</div>
+    {projectPreviews.map((project, index) => (
+      <div 
+        key={index}
+        style={{backgroundColor: backgroundColors[index % backgroundColors.length]}} 
+        className="fullscreen"
+      >
+        Test {project}
+      </div>
+    ))}
     </>
   );
 }
