@@ -33,6 +33,24 @@ function Home() {
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/quiz-app",
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
+    },
+    {
+      projectName: "Tic-Tac-Toe", 
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://jasmin-raith.github.io/tic-tac-toe/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/tic-tac-toe",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
+    },
+    {
+      projectName: "Lieferando-replica",
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt ansehen",
+      mediaUrl: "https://jasmin-raith.github.io/lieferando-replica/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/lieferando-replica",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/lieferando/lieferando.gif?raw=true",
     }
   ];
   
@@ -96,8 +114,8 @@ function Home() {
                 <Button style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: '300px', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
               </div>
             </div>
-            <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
-              <img style={{ objectFit: 'cover', height: '450px' }} src={project.gifVideo} />
+            <div style={{ width: '60%', flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
+              <img style={{ width: '90%', objectFit: 'contain', height: '450px' }} src={project.gifVideo} />
             </div>
           </div> 
         </div>
