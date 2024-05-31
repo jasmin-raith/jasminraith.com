@@ -10,8 +10,31 @@ function Home() {
 
   
   const backgroundColors = [yellow, pink, blue, green];
+  const buttonColors = [pink, yellow, lila, blue];
+  const buttonTextColors = ["white", lila, "white", green];
+  const accentColor = [pink, yellow, green, blue];
 
-  const projectPreviews: number[] = [1, 2, 3, 4, 5];
+  const projectPreviews: any[] = [
+    {
+      projectName: "Ring of fire",
+      projectMadeWith: "Angular, Firebase, TypeScript",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://ring-of-fire-tawny.vercel.app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/ring-of-fire",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/ring-of-fire/Ring%20of%20fire.gif?raw=true",
+    },
+    {
+      projectName: "Katzenquiz",
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://jasmin-raith.github.io/quiz-app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/quiz-app",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
+    }
+  ];
+  
   const [isMd] = useState(window.innerWidth >= 768);
 
 
@@ -56,7 +79,11 @@ function Home() {
           }}
           className="fullscreen"
         >
-          Test {project}
+          {project.projectName}
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
+            <Button style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: '300px', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
+            <Button style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: '300px', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+          </div>
         </div>
       ))}
     </>
