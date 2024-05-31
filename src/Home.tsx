@@ -98,16 +98,15 @@ function Home() {
             backgroundColor: backgroundColors[index % backgroundColors.length],
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
           }}
           className="fullscreen"
         >
-          <div style={{ display: 'flex', justifyContent: 'start', flexDirection: 'row', margin: '0px 54px'}}>
-            <div style={{ width: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', flexDirection: 'row', margin: '0px 54px'}}>
+            <div style={{ width: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: '0px 54px'}}>
               <h2 style={{ color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
               <div>
                 <p style={{ color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
-                <p style={{ color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem'}}>{project.projectMadeWith}</p>   
+                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
                 <Button style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: '300px', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
