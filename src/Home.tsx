@@ -12,7 +12,8 @@ function Home() {
   const backgroundColors = [yellow, pink, blue, green];
   const buttonColors = [pink, yellow, lila, blue];
   const buttonTextColors = ["white", lila, "white", green];
-  const accentColor = [pink, yellow, green, blue];
+  const accentColor = [pink, yellow, lila, blue];
+  const projectMadeWithCololors = [green, "white", "white", yellow];
 
   const projectPreviews: any[] = [
     {
@@ -70,20 +71,35 @@ function Home() {
           </div>
         </div>
       </div>
+
       {/* Project Preview */}
       {projectPreviews.map((project, index) => (
         <div
           key={index}
           style={{
             backgroundColor: backgroundColors[index % backgroundColors.length],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
           className="fullscreen"
         >
-          {project.projectName}
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
-            <Button style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: '300px', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
-            <Button style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: '300px', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
-          </div>
+          <div style={{ display: 'flex', justifyContent: 'start', flexDirection: 'row', margin: '0px 54px'}}>
+            <div style={{ width: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+              <h2 style={{ color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
+              <div>
+                <p style={{ color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
+                <p style={{ color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem'}}>{project.projectMadeWith}</p>   
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
+                <Button style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: '300px', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
+                <Button style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: '300px', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+              </div>
+            </div>
+            <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
+              <img style={{ objectFit: 'cover', height: '450px' }} src={project.gifVideo} />
+            </div>
+          </div> 
         </div>
       ))}
     </>
