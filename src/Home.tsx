@@ -21,6 +21,7 @@ function Home() {
   const location = useLocation();
 
   useEffect(() => {
+    console.log('location.hash', location.hash);
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
