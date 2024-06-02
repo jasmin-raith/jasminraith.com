@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { useLocation } from 'react-router-dom';
+
 
 function Home() {
   const lila = "#A0357E";
@@ -8,15 +10,28 @@ function Home() {
   const blue = "#00EEF5";
   const green = "#3B7475";
 
-  
   const backgroundColors = [yellow, pink, blue, green];
   const buttonColors = [pink, yellow, lila, blue];
   const buttonTextColors = ["white", lila, "white", green];
   const accentColor = [pink, yellow, lila, blue];
   const projectMadeWithCololors = [green, "white", "white", yellow];
 
+  const [isMd] = useState(window.innerWidth >= 768);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   const projectPreviews: any[] = [
     {
+      id: "ring-of-fire",
       projectName: "Ring of fire",
       projectMadeWith: "Angular, Firebase, TypeScript",
       tryButtonText: "Jetzt spielen",
@@ -26,6 +41,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/ring-of-fire/Ring%20of%20fire.gif?raw=true",
     },
     {
+      id: "quiz-app",
       projectName: "Katzenquiz",
       projectMadeWith: "JavaScript, HTML, CSS",
       tryButtonText: "Jetzt spielen",
@@ -35,6 +51,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
     },
     {
+      id: "tic-tac-toe",
       projectName: "Tic Tac Toe", 
       projectMadeWith: "JavaScript, HTML, CSS",
       tryButtonText: "Jetzt spielen",
@@ -44,6 +61,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
     },
     {
+      id: "lieferando-replica",
       projectName: "Lieferando Nachbau",
       projectMadeWith: "JavaScript, HTML, CSS",
       tryButtonText: "Jetzt ansehen",
@@ -53,6 +71,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/lieferando/lieferando.gif?raw=true",
     },
     {
+      id: "synonym-finder",
       projectName: "Synonym Finder",
       projectMadeWith: "JavaScript, HTML, CSS, API",
       tryButtonText: "Jetzt ausprobieren",
@@ -62,6 +81,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/synonymfinder/Synonymfinder.gif?raw=true",
     },
     {
+      id: "exact-match",
       projectName: "Exact Match Mockup",
       projectMadeWith: "Figma, Components",
       tryButtonText: "Jetzt ansehen",
@@ -71,6 +91,7 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
     },
     {
+      id: "virtual-dm-shop",
       projectName: "Idee für einen virtuellen Dm Shop",
       projectMadeWith: "Figma, Components",
       tryButtonText: "Jetzt ansehen",
@@ -80,9 +101,6 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/concept-idea-virtual-dm-shop/concept-idea-virtual-dm-shop.gif?raw=true",
     }
   ];
-  
-  const [isMd] = useState(window.innerWidth >= 768);
-
 
   return (
     <>
@@ -120,6 +138,7 @@ function Home() {
       {/* Project Preview */}
       {projectPreviews.map((project, index) => (
         <div
+          id={project.id}
           key={index}
           style={{
             backgroundColor: backgroundColors[index % backgroundColors.length],
