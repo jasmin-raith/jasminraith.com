@@ -20,10 +20,15 @@ function Home() {
 
   const location = useLocation();
 
+  function getQueryParam(param: string) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
   useEffect(() => {
-    console.log('location.hash', location.hash);
-    if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
+    const section = getQueryParam('section');
+    if (section) {
+      const element = document.getElementById(section);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
