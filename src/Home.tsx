@@ -114,7 +114,7 @@ function Home() {
       
       <div style={{ backgroundColor: lila }} className="fullscreen">
       <div>
-          <div style={{height: '90vh', display:'flex', flexDirection: isMd ? 'row' : 'column', alignContent: 'flex-start', margin: isMd ? '0px 54px' : '0px 27px'}}>
+          <div style={{height: '90vh', display:'flex', flexDirection: isMd ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
             {/* Text und Buttons */}
             <div style={{ height: 'fit-content', display: 'flex', width: isMd ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
               <p style={{ color: blue, fontSize: '2rem', marginTop:'100px' }}>Junior</p>
@@ -153,8 +153,8 @@ function Home() {
           }}
           className="fullscreen"
         >
-          <div style={{ width: '100%', height: isMd ? '' : '80%', display: 'flex', justifyContent: isMd ? 'space-between' : 'space-around', flexDirection: isMd ? 'row': 'column', margin: '0px 54px'}}>
-            <div style={{ width: isMd ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isMd ? '0px 54px' : '0px 27px'}}>
+          <div style={{ width: '100%', height: isMd ? '' : '80%', overflow: 'hidden', display: 'flex', justifyContent: isMd ? 'space-between' : 'space-around', flexDirection: isMd ? 'row': 'column', margin: '0px 54px'}}>
+            <div style={{ width: isMd ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isMd ? '0px 54px' : '0px 0px'}}>
               <h2 style={{ fontSize: isMd ? '2rem' : '3rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
               <div>
                 <p style={{ fontSize: isMd ? '1rem' : '1.5rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
