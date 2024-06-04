@@ -16,7 +16,18 @@ function Home() {
   const accentColor = [pink, yellow, lila, blue];
   const projectMadeWithCololors = [green, "white", "white", yellow];
 
-  const [isMd] = useState(window.innerWidth >= 768);
+  const [isMd, setIsMd] = useState(window.innerWidth >= 1080);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMd(window.innerWidth >= 1080);
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const location = useLocation();
 
