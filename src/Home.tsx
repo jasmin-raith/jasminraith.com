@@ -16,11 +16,13 @@ function Home() {
   const accentColor = [pink, yellow, lila, blue];
   const projectMadeWithCololors = [green, "white", "white", yellow];
 
-  const [isMd, setIsMd] = useState(window.innerWidth >= 1080);
+  const [isBigScreen, setBigScreen] = useState(window.innerWidth >= 1080);
+  const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMd(window.innerWidth >= 1080);
+      setBigScreen(window.innerWidth >= 1080);
+      setMediumScreen(window.innerWidth >= 540);
     };
     window.addEventListener('resize', handleResize);
 
@@ -124,22 +126,22 @@ function Home() {
       {/* Header */}
       
       <div style={{ backgroundColor: lila, overflow: 'hidden' }} className="fullscreen">
-        <div style={{height: '90vh', display:'flex', flexDirection: isMd ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
+        <div style={{height: '90vh', display:'flex', flexDirection: isBigScreen ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
           {/* Text und Buttons */}
-          <div style={{ height: 'fit-content', display: 'flex', width: isMd ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
-            <p style={{ color: blue, fontSize: isMd ? '2rem' : '1.5rem', marginTop: isMd ? '100px' : '40px' }}>Junior</p>
+          <div style={{ height: 'fit-content', display: 'flex', width: isBigScreen ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
+            <p style={{ color: blue, fontSize: isBigScreen ? '2rem' : '1.5rem', marginTop: isBigScreen ? '100px' : '40px' }}>Junior</p>
             <h1>
-              <p style={{ color: blue, fontSize: isMd ? '4rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
-              <p style={{ color: "white", fontSize: isMd ? '2rem' : '1.5rem', marginTop: '12px' }}>React / Angular / TypeScript</p>
+              <p style={{ color: blue, fontSize: isBigScreen ? '4rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
+              <p style={{ color: "white", fontSize: isBigScreen ? '2rem' : '1.5rem', marginTop: '12px' }}>React / Angular / TypeScript</p>
             </h1>
-            <div style={{ display: 'flex', flexDirection: 'column', marginTop: isMd ? '50px' : '10px' }}>
-              <Button href="https://www.linkedin.com/in/jasminraith-dev/" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: blue, color: "black", borderColor: blue, width: isMd ? '300px' : '50%', fontSize: '1rem' }} variant="primary" size="lg">LinkedIn</Button>{' '}
-              <Button href="https://github.com/jasmin-raith" target="_blank" rel="noopener noreferrer" style={{ color: blue, textDecoration: 'none', width: isMd ? '300px' : '50%', fontSize: '1rem' }} variant="link" size="lg"><b>GitHub</b></Button>
+            <div style={{ display: 'flex', flexDirection: 'column', marginTop: isBigScreen ? '50px' : '10px' }}>
+              <Button href="https://www.linkedin.com/in/jasminraith-dev/" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: blue, color: "black", borderColor: blue, width: isBigScreen ? '300px' : '50%', fontSize: '1rem' }} variant="primary" size="lg">LinkedIn</Button>{' '}
+              <Button href="https://github.com/jasmin-raith" target="_blank" rel="noopener noreferrer" style={{ color: blue, textDecoration: 'none', width: isBigScreen ? '300px' : '50%', fontSize: '1rem' }} variant="link" size="lg"><b>GitHub</b></Button>
             </div>
           </div>
           {/* Bild */}
           <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
-            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isMd ? '70px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
+            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen ? '70px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
           </div>
         </div>
         <div style={{height: '10vh', display: 'flex', justifyContent: 'center'}}>
@@ -165,20 +167,20 @@ function Home() {
           }}
           className="fullscreen"
         >
-          <div style={{ width: '100%', height: isMd ? '' : '85%', overflow: 'hidden', display: 'flex', justifyContent: isMd ? 'space-between' : 'space-around', flexDirection: isMd ? 'row': 'column', margin: '0px 54px'}}>
-            <div style={{ width: isMd ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isMd ? '0px 54px' : '0px 0px'}}>
+          <div style={{ width: '100%', height: isBigScreen ? '' : '85%', overflow: 'hidden', display: 'flex', justifyContent: isBigScreen ? 'space-between' : 'space-around', flexDirection: isBigScreen ? 'row': 'column', margin: '0px 54px'}}>
+            <div style={{ width: isBigScreen ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isBigScreen ? '0px 54px' : '0px 0px'}}>
               <h2 style={{ fontSize: '2rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
               <div>
                 <p style={{ fontSize: '1rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
                 <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
-                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isMd ? '300px' : '75%', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
-                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isMd ? '300px' : '75%', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isBigScreen ? '300px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
+                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isBigScreen ? '300px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
               </div>
             </div>
-            <div style={{ width: isMd ? '60%' : '100%', flex: isMd ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
-              <img style={{ width: '90%', objectFit: 'contain', height: isMd ? '450px' : '170px' }} src={project.gifVideo} />
+            <div style={{ width: isBigScreen ? '60%' : '100%', flex: isBigScreen ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
+              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px' }} src={project.gifVideo} />
             </div>
           </div> 
         </div>
