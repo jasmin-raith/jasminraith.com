@@ -152,20 +152,20 @@ function Home() {
           }}
           className="fullscreen"
         >
-          <div style={{ width: '100%', height: isMd ? '' : '80%', overflow: 'hidden', display: 'flex', justifyContent: isMd ? 'space-between' : 'space-around', flexDirection: isMd ? 'row': 'column', margin: '0px 54px'}}>
+          <div style={{ width: '100%', height: isMd ? '' : '85%', overflow: 'hidden', display: 'flex', justifyContent: isMd ? 'space-between' : 'space-around', flexDirection: isMd ? 'row': 'column', margin: '0px 54px'}}>
             <div style={{ width: isMd ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isMd ? '0px 54px' : '0px 0px'}}>
-              <h2 style={{ fontSize: isMd ? '2rem' : '3rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
+              <h2 style={{ fontSize: '2rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
               <div>
-                <p style={{ fontSize: isMd ? '1rem' : '1.5rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
-                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: isMd ? '1.5rem' : '2.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
+                <p style={{ fontSize: '1rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
+                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
-                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: '300px', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
-                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: '300px', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isMd ? '300px' : '75%', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
+                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isMd ? '300px' : '75%', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
               </div>
             </div>
             <div style={{ width: isMd ? '60%' : '100%', flex: isMd ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
-              <img style={{ width: '90%', objectFit: 'contain', height: isMd ? '450px' : '290px' }} src={project.gifVideo} />
+              <img style={{ width: '90%', objectFit: 'contain', height: isMd ? '450px' : '170px' }} src={project.gifVideo} />
             </div>
           </div> 
         </div>
