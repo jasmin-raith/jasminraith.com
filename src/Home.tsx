@@ -102,7 +102,7 @@ function Home() {
     {
       id: "exact-match",
       projectName: "Exact Match Mockup",
-      projectMadeWith: "Figma, Components",
+      projectMadeWith: "Figma, Components, UX/UI",
       tryButtonText: "Jetzt ansehen",
       mediaUrl: "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
@@ -112,7 +112,7 @@ function Home() {
     {
       id: "virtual-dm-shop",
       projectName: "Idee für einen virtuellen dm",
-      projectMadeWith: "Figma, Components",
+      projectMadeWith: "Figma, Components, UX/UI",
       tryButtonText: "Jetzt ansehen",
       mediaUrl: "https://www.figma.com/proto/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?page-id=0%3A1&type=design&node-id=1-2&viewport=3%2C62%2C0.45&t=HFtJz7rNpHropiwQ-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
