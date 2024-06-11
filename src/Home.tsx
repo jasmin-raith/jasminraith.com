@@ -145,7 +145,7 @@ function Home() {
           </div>
         </div>
         <div style={{height: '10vh', display: 'flex', justifyContent: 'center'}}>
-          <a href="https://www.jasminraith.com/?section=ring-of-fire" style={{ textDecoration: 'none' }}>
+          <a href="https://www.jasminraith.com/?section=ring-of-fire" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
               <p style={{ color: blue, fontSize: '1rem' }}>Meine Projekte</p>
               <img style={{ objectFit: 'cover' }} src="/assets/img/arrow.svg" />
