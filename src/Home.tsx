@@ -160,6 +160,16 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
     },
     {
+      id: "el-pollo-loco",
+      projectName: "El Pollo Loco",
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://el-pollo-loco-fawn.vercel.app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/el-pollo-loco",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/el-pollo-loco/el%20pollo%20loco.gif?raw=true"
+    },
+    {
       id: "band-page",
       projectName: "Bandseite",
       projectMadeWith: "HTML, CSS, Responsive",
