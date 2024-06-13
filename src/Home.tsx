@@ -18,11 +18,13 @@ function Home() {
 
   const [isBigScreen, setBigScreen] = useState(window.innerWidth >= 1080);
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
+  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight);
 
   useEffect(() => {
     const handleResize = () => {
       setBigScreen(window.innerWidth >= 1080);
       setMediumScreen(window.innerWidth >= 540);
+      setLandscape(window.innerWidth > window.innerHeight);
     };
     window.addEventListener('resize', handleResize);
 
@@ -206,9 +208,9 @@ function Home() {
       {/* Header */}
       
       <div style={{ backgroundColor: lila, overflow: 'hidden' }} className="fullscreen">
-        <div style={{height: '90vh', display:'flex', flexDirection: isBigScreen ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
+        <div style={{height: isLandscape && !isBigScreen ? '86vh' : '90vh', display:'flex', flexDirection: isBigScreen || isLandscape ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
           {/* Text und Buttons */}
-          <div style={{ height: 'fit-content', display: 'flex', width: isBigScreen ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
+          <div style={{ height: 'fit-content', display: 'flex', width: isBigScreen || isLandscape ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
             <p style={{ color: blue, fontSize: isBigScreen ? '2rem' : '1.5rem', marginTop: isBigScreen ? '100px' : '40px' }}>Junior</p>
             <h1>
               <p style={{ color: blue, fontSize: isBigScreen ? '4rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
@@ -221,7 +223,7 @@ function Home() {
           </div>
           {/* Bild */}
           <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
-            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen ? '70px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
+            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen || isLandscape ? '70px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
           </div>
         </div>
         <div style={{height: '10vh', display: 'flex', justifyContent: 'center'}}>
