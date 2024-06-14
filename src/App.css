@@ -1,6 +1,7 @@
 #root {
   margin: 0 auto;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
