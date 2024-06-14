@@ -112,6 +112,16 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/notes/Notizen.gif?raw=true",
     },
     {
+      id: "el-pollo-loco",
+      projectName: "El Pollo Loco",
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://el-pollo-loco-fawn.vercel.app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/el-pollo-loco",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/el-pollo-loco/el%20pollo%20loco.gif?raw=true"
+    },
+    {
       id: "bitcoin-value",
       projectName: "Bitcoin Wert",
       projectMadeWith: "JavaScript, HTML, API",
@@ -132,6 +142,16 @@ function Home() {
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/synonymfinder/Synonymfinder.gif?raw=true",
     },
     {
+      id: "tic-tac-toe",
+      projectName: "Tic Tac Toe", 
+      projectMadeWith: "JavaScript, HTML, CSS",
+      tryButtonText: "Jetzt spielen",
+      mediaUrl: "https://jasmin-raith.github.io/tic-tac-toe/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/tic-tac-toe",
+      gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
+    },
+    {
       id: "lieferando-replica",
       projectName: "Lieferando Nachbau",
       projectMadeWith: "JavaScript, HTML, CSS",
@@ -150,26 +170,6 @@ function Home() {
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/quiz-app",
       gifVideo: "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
-    },
-    {
-      id: "tic-tac-toe",
-      projectName: "Tic Tac Toe", 
-      projectMadeWith: "JavaScript, HTML, CSS",
-      tryButtonText: "Jetzt spielen",
-      mediaUrl: "https://jasmin-raith.github.io/tic-tac-toe/",
-      codeButtonText: "Code ansehen",
-      codeUrl: "https://github.com/jasmin-raith/tic-tac-toe",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
-    },
-    {
-      id: "el-pollo-loco",
-      projectName: "El Pollo Loco",
-      projectMadeWith: "JavaScript, HTML, CSS",
-      tryButtonText: "Jetzt spielen",
-      mediaUrl: "https://el-pollo-loco-fawn.vercel.app/",
-      codeButtonText: "Code ansehen",
-      codeUrl: "https://github.com/jasmin-raith/el-pollo-loco",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/el-pollo-loco/el%20pollo%20loco.gif?raw=true"
     },
     {
       id: "band-page",
