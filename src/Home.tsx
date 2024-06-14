@@ -54,7 +54,7 @@ function Home() {
     {
       id: "todo-list",
       projectName: "Todo Liste",
-      projectMadeWith: "React, TypeScript",
+      projectMadeWith: "React",
       tryButtonText: "Jetzt ausprobieren",
       mediaUrl: "https://todo-list-lemon-seven.vercel.app/",
       codeButtonText: "Code ansehen",
@@ -64,7 +64,7 @@ function Home() {
     {
       id: "online-shop",
       projectName: "Online Shop",
-      projectMadeWith: "React, TypeScript",
+      projectMadeWith: "React, Bootstrap",
       tryButtonText: "Jetzt ausprobieren",
       mediaUrl: "https://mein-online-shop.vercel.app/",
       codeButtonText: "Code ansehen",
@@ -74,7 +74,7 @@ function Home() {
     {
       id: "virtual-dm-shop",
       projectName: "Idee für einen virtuellen dm",
-      projectMadeWith: "Figma, Components, UX/UI",
+      projectMadeWith: "Figma, Components, UX/UI, Design",
       tryButtonText: "Jetzt ansehen",
       mediaUrl: "https://www.figma.com/proto/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?page-id=0%3A1&type=design&node-id=1-2&viewport=3%2C62%2C0.45&t=HFtJz7rNpHropiwQ-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
@@ -84,7 +84,7 @@ function Home() {
     {
       id: "exact-match",
       projectName: "Exact Match Mockup",
-      projectMadeWith: "Figma, Components, UX/UI",
+      projectMadeWith: "Figma, Components, UX/UI, Design",
       tryButtonText: "Jetzt ansehen",
       mediaUrl: "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
@@ -144,7 +144,7 @@ function Home() {
     {
       id: "quiz-app",
       projectName: "Katzenquiz",
-      projectMadeWith: "JavaScript, HTML, CSS",
+      projectMadeWith: "JavaScript, HTML, Bootstrap",
       tryButtonText: "Jetzt spielen",
       mediaUrl: "https://jasmin-raith.github.io/quiz-app/",
       codeButtonText: "Code ansehen",
