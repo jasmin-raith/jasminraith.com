@@ -20,6 +20,11 @@ function Home() {
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
   const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight);
 
+  const [isGifLoaded, setIsGifLoaded] = useState(false);
+  const handleGifLoad = () => {
+    setIsGifLoaded(true);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setBigScreen(window.innerWidth >= 1080);
@@ -262,7 +267,8 @@ function Home() {
               </div>
             </div>
             <div style={{ width: isBigScreen ? '60%' : '100%', flex: isBigScreen ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
-              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px' }} src={project.gifVideo} />
+              {!isGifLoaded && <p>Wird geladen...</p>}
+              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px', display: isGifLoaded ? 'block' : 'none' }} src={project.gifVideo} onLoad={handleGifLoad}/>
             </div>
           </div> 
         </div>
