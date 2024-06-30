@@ -273,6 +273,12 @@ function Home() {
           </div> 
         </div>
       ))}
+
+      <div style={{ backgroundColor: 'black', height: '6vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <a href="./Impressum" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>
+          <p style={{ fontSize: '0.7rem' }}>Impressum</p>
+        </a>
+      </div>
     </>
   );
 }
