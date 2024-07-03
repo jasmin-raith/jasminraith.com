@@ -274,10 +274,14 @@ function Home() {
         </div>
       ))}
 
-      <div style={{ backgroundColor: 'black', height: '6vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <a href="./Impressum" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>
-          <p style={{ fontSize: '0.7rem' }}>Impressum</p>
-        </a>
+      <div style={{ backgroundColor: 'black', color: 'white', height: '9vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
+            <h2 style={{ fontSize: '0.7rem'}}>Impressum:</h2>
+                <p style={{ fontSize: '0.5rem'}}>Jasmin Raith</p><br />
+                <p style={{ fontSize: '0.5rem'}}>Kämpferstraße 19<br />
+                80937 München</p> <br />
+
+                <p style={{ fontSize: '0.5rem'}}>Telefon: 01788242794<br />
+                E-Mail: jasminraith@icloud.com</p>
       </div>
     </>
   );
