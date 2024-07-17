@@ -18,7 +18,7 @@ function Home() {
 
   const [isBigScreen, setBigScreen] = useState(window.innerWidth >= 1080);
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
-  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight);
+  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight && window.innerWidth < 768); 
 
   const [isGifLoaded, setIsGifLoaded] = useState(false);
   const handleGifLoad = () => {
@@ -29,8 +29,9 @@ function Home() {
     const handleResize = () => {
       setBigScreen(window.innerWidth >= 1080);
       setMediumScreen(window.innerWidth >= 540);
-      setLandscape(window.innerWidth > window.innerHeight);
-    };
+      if (window.innerWidth < 768) { 
+        setLandscape(window.innerWidth > window.innerHeight);
+      }    };
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -255,15 +256,15 @@ function Home() {
           className="fullscreen"
         >
           <div style={{ width: '100%', height: isBigScreen ? '' : '85%', overflow: 'hidden', display: 'flex', justifyContent: isBigScreen ? 'space-between' : 'space-around', flexDirection: isBigScreen ? 'row': 'column', margin: '0px 54px'}}>
-            <div style={{ width: isBigScreen ? '40%' : '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden', padding: isBigScreen ? '0px 54px' : '0px 0px'}}>
-              <h2 style={{ fontSize: '2rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
+            <div style={{ width: isBigScreen ? '40%' : '100%', display: 'flex', flexWrap: isLandscape ? 'wrap' : 'nowrap', flexDirection: 'column', justifyContent: isLandscape ? 'center' : 'space-between', overflow: 'hidden', padding: isBigScreen ? '0px 54px' : '0px 0px'}}>
+              <h2 style={{ fontSize: isLandscape ? '1.5rem' : '2rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
               <div>
-                <p style={{ fontSize: '1rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
-                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
+                <p style={{ fontSize: isLandscape ? '0.8rem' : '1rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
+                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: isLandscape ? '1rem' : '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', marginTop: '50px' }}>
-                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isBigScreen ? '300px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
-                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isBigScreen ? '300px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: isLandscape ? 'center' : '' , justifyContent: isLandscape ? 'center' : '', marginTop: isLandscape ? '' : '50px' }}>
+                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isBigScreen ? '300px' : isLandscape ? '200px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
+                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isBigScreen ? '300px' : isLandscape ? '200px' : isMediumScreen ? '50%' : '75%', fontSize: '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
               </div>
             </div>
             <div style={{ width: isBigScreen ? '60%' : '100%', flex: isBigScreen ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
