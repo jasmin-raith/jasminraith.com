@@ -20,10 +20,22 @@ function Home() {
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
   const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight && window.innerWidth < 768); 
 
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
   const [isGifLoaded, setIsGifLoaded] = useState(false);
   const handleGifLoad = () => {
     setIsGifLoaded(true);
   };
+
+  function handleImageClick(imageUrl: string) {
+    setSelectedImage(imageUrl);
+    setShowOverlay(true);
+  }
+
+  function handleCloseOverlay() {
+    setShowOverlay(false);
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -269,11 +281,23 @@ function Home() {
             </div>
             <div style={{ width: isBigScreen ? '60%' : '100%', flex: isBigScreen ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
               {!isGifLoaded && <p>Wird geladen...</p>}
-              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px', display: isGifLoaded ? 'block' : 'none' }} src={project.gifVideo} onLoad={handleGifLoad}/>
+              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px', display: isGifLoaded ? 'block' : 'none' }} src={project.gifVideo} onClick={() => handleImageClick(project.gifVideo)} onLoad={handleGifLoad}/>
             </div>
           </div> 
         </div>
       ))}
+
+      {showOverlay && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+          backgroundColor: 'black', display: 'flex', justifyContent: 'center',
+          alignItems: 'center', zIndex: 1000
+        }}
+          onClick={handleCloseOverlay}
+        >
+          <img src={selectedImage} alt="Project Preview" style={{ width: '95%', maxHeight: '95%', objectFit: 'contain' }} />
+        </div>
+      )}
 
       <div style={{ backgroundColor: 'black', color: 'white', height: '9vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
             <h2 style={{ fontSize: '0.7rem'}}>Impressum:</h2>
