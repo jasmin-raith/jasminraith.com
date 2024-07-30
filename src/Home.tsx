@@ -18,7 +18,7 @@ function Home() {
 
   const [isBigScreen, setBigScreen] = useState(window.innerWidth >= 1080);
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
-  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight && window.innerWidth < 768); 
+  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight && window.innerWidth < 932); 
 
   const [showOverlay, setShowOverlay] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -41,7 +41,7 @@ function Home() {
     const handleResize = () => {
       setBigScreen(window.innerWidth >= 1080);
       setMediumScreen(window.innerWidth >= 540);
-      if (window.innerWidth < 768) { 
+      if (window.innerWidth < 932) { 
         setLandscape(window.innerWidth > window.innerHeight);
       }    };
     window.addEventListener('resize', handleResize);
@@ -229,10 +229,10 @@ function Home() {
         <div style={{height: isLandscape && !isBigScreen ? '86vh' : '90vh', display:'flex', flexDirection: isBigScreen || isLandscape ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
           {/* Text und Buttons */}
           <div style={{ height: 'fit-content', display: 'flex', width: isBigScreen || isLandscape ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
-            <p style={{ color: blue, fontSize: isBigScreen ? '2rem' : '1.5rem', marginTop: isBigScreen ? '100px' : '40px' }}>Junior</p>
+            <p style={{ color: blue, fontSize: isBigScreen ? '2rem' : isLandscape ? '1.2rem' : '1.5rem', marginTop: isBigScreen ? '100px' : '40px' }}>Junior</p>
             <h1>
-              <p style={{ color: blue, fontSize: isBigScreen ? '4rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
-              <p style={{ color: "white", fontSize: isBigScreen ? '2rem' : '1.5rem', marginTop: '12px' }}>React / Angular / TypeScript</p>
+              <p style={{ color: blue, fontSize: isBigScreen ? '4rem' : isLandscape ? '1.7rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
+              <p style={{ color: "white", fontSize: isBigScreen ? '2rem' : isLandscape ? '1.2rem' : '1.5rem', marginTop: '12px' }}>React / Angular / TypeScript</p>
             </h1>
             <div style={{ display: 'flex', flexDirection: 'column', marginTop: isBigScreen ? '50px' : '10px' }}>
               <Button href="https://www.linkedin.com/in/jasminraith-dev/" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: blue, color: "black", borderColor: blue, width: isBigScreen ? '300px' : '50%', fontSize: '1rem' }} variant="primary" size="lg">LinkedIn</Button>{' '}
@@ -241,7 +241,7 @@ function Home() {
           </div>
           {/* Bild */}
           <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
-            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen || isLandscape ? '70px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
+            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen ? '70px' : isLandscape ? '35px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
           </div>
         </div>
         <div style={{height: '10vh', display: 'flex', justifyContent: 'center'}}>
