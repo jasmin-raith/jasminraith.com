@@ -299,7 +299,8 @@ function Home() {
         </div>
       )}
 
-      <div style={{ backgroundColor: 'black', color: 'white', height: '9vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
+      {/* Impressum */}
+      <div style={{ backgroundColor: 'black', color: 'white', height: isLandscape ? '15vh' : '9vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
             <h2 style={{ fontSize: '0.7rem'}}>Impressum:</h2>
                 <p style={{ fontSize: '0.5rem'}}>Jasmin Raith</p><br />
                 <p style={{ fontSize: '0.5rem'}}>Kämpferstraße 19<br />
