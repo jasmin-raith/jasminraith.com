@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { useLocation } from 'react-router-dom';
-
+import { useLocation } from "react-router-dom";
 
 function Home() {
   const lila = "#A0357E";
@@ -18,7 +17,9 @@ function Home() {
 
   const [isBigScreen, setBigScreen] = useState(window.innerWidth >= 1080);
   const [isMediumScreen, setMediumScreen] = useState(window.innerWidth >= 540);
-  const [isLandscape, setLandscape] = useState(window.innerWidth > window.innerHeight && window.innerWidth < 932); 
+  const [isLandscape, setLandscape] = useState(
+    window.innerWidth > window.innerHeight && window.innerWidth < 932
+  );
 
   const [showOverlay, setShowOverlay] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -41,13 +42,14 @@ function Home() {
     const handleResize = () => {
       setBigScreen(window.innerWidth >= 1080);
       setMediumScreen(window.innerWidth >= 540);
-      if (window.innerWidth < 932) { 
+      if (window.innerWidth < 932) {
         setLandscape(window.innerWidth > window.innerHeight);
-      }    };
-    window.addEventListener('resize', handleResize);
+      }
+    };
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -59,16 +61,27 @@ function Home() {
   }
 
   useEffect(() => {
-    const section = getQueryParam('section');
+    const section = getQueryParam("section");
     if (section) {
       const element = document.getElementById(section);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, [location]);
 
   const projectPreviews: any[] = [
+    {
+      id: "fancy-counter",
+      projectName: "Fancy Counter",
+      projectMadeWith: "React",
+      tryButtonText: "Jetzt ausprobieren",
+      mediaUrl: "https://fancy-counter-vert.vercel.app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/fancy-counter",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/fancy-counter/fancy-counter.gif?raw=true",
+    },
     {
       id: "todo-list",
       projectName: "Todo Liste",
@@ -77,7 +90,8 @@ function Home() {
       mediaUrl: "https://todo-list-lemon-seven.vercel.app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/todo-list",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/todo-list/Todo%20list.gif?raw=true"
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/todo-list/Todo%20list.gif?raw=true",
     },
     {
       id: "online-shop",
@@ -87,27 +101,34 @@ function Home() {
       mediaUrl: "https://mein-online-shop.vercel.app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/mein-online-shop",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/online-shop/Online%20Shop.gif?raw=true"
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/online-shop/Online%20Shop.gif?raw=true",
     },
     {
       id: "virtual-dm-shop",
       projectName: "Idee für einen virtuellen dm",
       projectMadeWith: "Figma, Components, UX/UI, Design",
       tryButtonText: "Jetzt ansehen",
-      mediaUrl: "https://www.figma.com/proto/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?page-id=0%3A1&type=design&node-id=1-2&viewport=3%2C62%2C0.45&t=HFtJz7rNpHropiwQ-1&scaling=scale-down&starting-point-node-id=1%3A2",
+      mediaUrl:
+        "https://www.figma.com/proto/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?page-id=0%3A1&type=design&node-id=1-2&viewport=3%2C62%2C0.45&t=HFtJz7rNpHropiwQ-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
-      codeUrl: "https://www.figma.com/design/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?m=dev&node-id=0-1&t=VfsQjOwoYUHwAln9-1",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/concept-idea-virtual-dm-shop/concept-idea-virtual-dm-shop.gif?raw=true",
+      codeUrl:
+        "https://www.figma.com/design/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?m=dev&node-id=0-1&t=VfsQjOwoYUHwAln9-1",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/concept-idea-virtual-dm-shop/concept-idea-virtual-dm-shop.gif?raw=true",
     },
     {
       id: "exact-match",
       projectName: "Exact Match Mockup",
       projectMadeWith: "Figma, Components, UX/UI, Design",
       tryButtonText: "Jetzt ansehen",
-      mediaUrl: "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
+      mediaUrl:
+        "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
       codeButtonText: "Übersicht ansehen",
-      codeUrl: "https://www.figma.com/design/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?m=dev&node-id=0-1&t=c5mwxNX5LclzQkJ3-1",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
+      codeUrl:
+        "https://www.figma.com/design/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?m=dev&node-id=0-1&t=c5mwxNX5LclzQkJ3-1",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
     },
     {
       id: "ring-of-fire",
@@ -117,7 +138,8 @@ function Home() {
       mediaUrl: "https://ring-of-fire-tawny.vercel.app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/ring-of-fire",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/ring-of-fire/Ring%20of%20fire.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/ring-of-fire/Ring%20of%20fire.gif?raw=true",
     },
     {
       id: "notes-app",
@@ -127,7 +149,8 @@ function Home() {
       mediaUrl: "https://notes-fawn-two.vercel.app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/notes",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/notes/Notizen.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/notes/Notizen.gif?raw=true",
     },
     {
       id: "el-pollo-loco",
@@ -137,7 +160,8 @@ function Home() {
       mediaUrl: "https://el-pollo-loco-fawn.vercel.app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/el-pollo-loco",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/el-pollo-loco/el%20pollo%20loco.gif?raw=true"
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/el-pollo-loco/el%20pollo%20loco.gif?raw=true",
     },
     {
       id: "bitcoin-value",
@@ -147,7 +171,8 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/bitcoin-value/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/bitcoin-value",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/bitcoin-value/bitcoin-value.png?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/bitcoin-value/bitcoin-value.png?raw=true",
     },
     {
       id: "synonym-finder",
@@ -157,17 +182,19 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/synonym-finder/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/synonym-finder",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/synonymfinder/Synonymfinder.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/synonymfinder/Synonymfinder.gif?raw=true",
     },
     {
       id: "tic-tac-toe",
-      projectName: "Tic Tac Toe", 
+      projectName: "Tic Tac Toe",
       projectMadeWith: "JavaScript, HTML, CSS",
       tryButtonText: "Jetzt spielen",
       mediaUrl: "https://jasmin-raith.github.io/tic-tac-toe/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/tic-tac-toe",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/tic-tac-toe/tic-tac-toe.gif?raw=true",
     },
     {
       id: "lieferando-replica",
@@ -177,7 +204,8 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/lieferando-replica/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/lieferando-replica",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/lieferando/lieferando.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/lieferando/lieferando.gif?raw=true",
     },
     {
       id: "quiz-app",
@@ -187,7 +215,8 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/quiz-app/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/quiz-app",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/katzenquiz/Katzenquiz.gif?raw=true",
     },
     {
       id: "band-page",
@@ -197,7 +226,8 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/band-page/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/band-page",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/band-page/BandGif.gif?raw=true"
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/band-page/BandGif.gif?raw=true",
     },
     {
       id: "sakura-restaurant",
@@ -206,8 +236,9 @@ function Home() {
       tryButtonText: "Jetzt ansehen",
       mediaUrl: "https://jasmin-raith.github.io/sakura-restaurant/",
       codeButtonText: "Code ansehen",
-      codeUrl: "https://github.com/jasmin-raith/sakura-restaurant", 
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/sakura-restaurant/Sakura%20Restaurant.gif?raw=true"
+      codeUrl: "https://github.com/jasmin-raith/sakura-restaurant",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/sakura-restaurant/Sakura%20Restaurant.gif?raw=true",
     },
     {
       id: "restaurant-example",
@@ -217,38 +248,162 @@ function Home() {
       mediaUrl: "https://jasmin-raith.github.io/restaurant-example/",
       codeButtonText: "Code ansehen",
       codeUrl: "https://github.com/jasmin-raith/restaurant-example",
-      gifVideo: "https://github.com/jasmin-raith/media/blob/main/restaurant-example/Restaurant-Beispiel.gif?raw=true"
-    }
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/restaurant-example/Restaurant-Beispiel.gif?raw=true",
+    },
   ];
 
   return (
     <>
       {/* Header */}
-      
-      <div style={{ backgroundColor: lila, overflow: 'hidden' }} className="fullscreen">
-        <div style={{height: isLandscape && !isBigScreen ? '86vh' : '90vh', display:'flex', flexDirection: isBigScreen || isLandscape ? 'row' : 'column', alignContent: 'flex-start', margin: '0px 54px'}}>
+
+      <div
+        style={{ backgroundColor: lila, overflow: "hidden" }}
+        className="fullscreen"
+      >
+        <div
+          style={{
+            height: isLandscape && !isBigScreen ? "86vh" : "90vh",
+            display: "flex",
+            flexDirection: isBigScreen || isLandscape ? "row" : "column",
+            alignContent: "flex-start",
+            margin: "0px 54px",
+          }}
+        >
           {/* Text und Buttons */}
-          <div style={{ height: 'fit-content', display: 'flex', width: isBigScreen || isLandscape ? '60%' : '100%', flexDirection: 'column', justifyContent: 'center'}}>
-            <p style={{ color: blue, fontSize: isBigScreen ? '2rem' : isLandscape ? '1.2rem' : '1.5rem', marginTop: isBigScreen ? '100px' : '40px' }}>Junior</p>
+          <div
+            style={{
+              height: "fit-content",
+              display: "flex",
+              width: isBigScreen || isLandscape ? "60%" : "100%",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <p
+              style={{
+                color: blue,
+                fontSize: isBigScreen
+                  ? "2rem"
+                  : isLandscape
+                  ? "1.2rem"
+                  : "1.5rem",
+                marginTop: isBigScreen ? "100px" : "40px",
+              }}
+            >
+              Junior
+            </p>
             <h1>
-              <p style={{ color: blue, fontSize: isBigScreen ? '4rem' : isLandscape ? '1.7rem' : '2.5rem', lineHeight: '100%'}} lang="en">Frontend Entwicklerin</p>
-              <p style={{ color: "white", fontSize: isBigScreen ? '2rem' : isLandscape ? '1.2rem' : '1.5rem', marginTop: '12px' }}>React / Angular / TypeScript</p>
+              <p
+                style={{
+                  color: blue,
+                  fontSize: isBigScreen
+                    ? "4rem"
+                    : isLandscape
+                    ? "1.7rem"
+                    : "2.5rem",
+                  lineHeight: "100%",
+                }}
+                lang="en"
+              >
+                Frontend Entwicklerin
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: isBigScreen
+                    ? "2rem"
+                    : isLandscape
+                    ? "1.2rem"
+                    : "1.5rem",
+                  marginTop: "12px",
+                }}
+              >
+                React / Angular / TypeScript
+              </p>
             </h1>
-            <div style={{ display: 'flex', flexDirection: 'column', marginTop: isBigScreen ? '50px' : '10px' }}>
-              <Button href="https://www.linkedin.com/in/jasminraith-dev/" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: blue, color: "black", borderColor: blue, width: isBigScreen ? '300px' : '50%', fontSize: '1rem' }} variant="primary" size="lg">LinkedIn</Button>{' '}
-              <Button href="https://github.com/jasmin-raith" target="_blank" rel="noopener noreferrer" style={{ color: blue, textDecoration: 'none', width: isBigScreen ? '300px' : '50%', fontSize: '1rem' }} variant="link" size="lg"><b>GitHub</b></Button>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                marginTop: isBigScreen ? "50px" : "10px",
+              }}
+            >
+              <Button
+                href="https://www.linkedin.com/in/jasminraith-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: blue,
+                  color: "black",
+                  borderColor: blue,
+                  width: isBigScreen ? "300px" : "50%",
+                  fontSize: "1rem",
+                }}
+                variant="primary"
+                size="lg"
+              >
+                LinkedIn
+              </Button>{" "}
+              <Button
+                href="https://github.com/jasmin-raith"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: blue,
+                  textDecoration: "none",
+                  width: isBigScreen ? "300px" : "50%",
+                  fontSize: "1rem",
+                }}
+                variant="link"
+                size="lg"
+              >
+                <b>GitHub</b>
+              </Button>
             </div>
           </div>
           {/* Bild */}
-          <div style={{ flex: '1', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
-            <img style={{ height: '100%', objectFit: 'contain', paddingTop: isBigScreen ? '70px' : isLandscape ? '35px' : '0px', overflow: 'hidden' }} src="/assets/img/Schnupper.png" />
+          <div
+            style={{
+              flex: "1",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              style={{
+                height: "100%",
+                objectFit: "contain",
+                paddingTop: isBigScreen ? "70px" : isLandscape ? "35px" : "0px",
+                overflow: "hidden",
+              }}
+              src="/assets/img/Schnupper.png"
+            />
           </div>
         </div>
-        <div style={{height: '10vh', display: 'flex', justifyContent: 'center'}}>
-          <a href="https://www.jasminraith.com/?section=todo-list" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-              <p style={{ color: blue, fontSize: '1rem' }}>Meine Projekte</p>
-              <img style={{ objectFit: 'cover' }} src="/assets/img/arrow.svg" />
+        <div
+          style={{ height: "10vh", display: "flex", justifyContent: "center" }}
+        >
+          <a
+            href="https://www.jasminraith.com/?section=todo-list"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <p style={{ color: blue, fontSize: "1rem" }}>Meine Projekte</p>
+              <img style={{ objectFit: "cover" }} src="/assets/img/arrow.svg" />
             </div>
           </a>
         </div>
@@ -261,53 +416,199 @@ function Home() {
           key={index}
           style={{
             backgroundColor: backgroundColors[index % backgroundColors.length],
-            display: 'flex',
-            alignItems: 'center',
-            overflow: 'hidden',
+            display: "flex",
+            alignItems: "center",
+            overflow: "hidden",
           }}
           className="fullscreen"
         >
-          <div style={{ width: '100%', height: isBigScreen ? '' : '85%', overflow: 'hidden', display: 'flex', justifyContent: isBigScreen ? 'space-between' : 'space-around', flexDirection: isBigScreen ? 'row': 'column', margin: '0px 54px'}}>
-            <div style={{ width: isBigScreen ? '40%' : '100%', display: 'flex', flexWrap: isLandscape ? 'wrap' : 'nowrap', flexDirection: 'column', justifyContent: isLandscape ? 'center' : 'space-between', overflow: 'hidden', padding: isBigScreen ? '0px 54px' : '0px 0px'}}>
-              <h2 style={{ fontSize: isLandscape ? '1.3rem' : '2rem', color: accentColor[index % accentColor.length]}}>{project.projectName}</h2>
+          <div
+            style={{
+              width: "100%",
+              height: isBigScreen ? "" : "85%",
+              overflow: "hidden",
+              display: "flex",
+              justifyContent: isBigScreen ? "space-between" : "space-around",
+              flexDirection: isBigScreen ? "row" : "column",
+              margin: "0px 54px",
+            }}
+          >
+            <div
+              style={{
+                width: isBigScreen ? "40%" : "100%",
+                display: "flex",
+                flexWrap: isLandscape ? "wrap" : "nowrap",
+                flexDirection: "column",
+                justifyContent: isLandscape ? "center" : "space-between",
+                overflow: "hidden",
+                padding: isBigScreen ? "0px 54px" : "0px 0px",
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: isLandscape ? "1.3rem" : "2rem",
+                  color: accentColor[index % accentColor.length],
+                }}
+              >
+                {project.projectName}
+              </h2>
               <div>
-                <p style={{ fontSize: isLandscape ? '0.8rem' : '1rem', color: projectMadeWithCololors[index % projectMadeWithCololors.length]}}>Gemacht mit</p>
-                <p style={{ width: '100%', color: projectMadeWithCololors[index % projectMadeWithCololors.length], fontSize: isLandscape ? '1rem' : '1.5rem', overflow: 'hidden'}}>{project.projectMadeWith}</p>   
+                <p
+                  style={{
+                    fontSize: isLandscape ? "0.8rem" : "1rem",
+                    color:
+                      projectMadeWithCololors[
+                        index % projectMadeWithCololors.length
+                      ],
+                  }}
+                >
+                  Gemacht mit
+                </p>
+                <p
+                  style={{
+                    width: "100%",
+                    color:
+                      projectMadeWithCololors[
+                        index % projectMadeWithCololors.length
+                      ],
+                    fontSize: isLandscape ? "1rem" : "1.5rem",
+                    overflow: "hidden",
+                  }}
+                >
+                  {project.projectMadeWith}
+                </p>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: isLandscape ? 'center' : '' , justifyContent: isLandscape ? 'center' : '', marginTop: isLandscape ? '' : '50px' }}>
-                <Button href={project.mediaUrl} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: buttonColors[index % buttonColors.length], borderColor: buttonColors[index % buttonColors.length], color: buttonTextColors[index % buttonTextColors.length], width: isBigScreen ? '300px' : isLandscape ? '250px' : isMediumScreen ? '50%' : '75%', fontSize: isLandscape ? '0.8rem' : '1rem' }} variant="primary" size="lg">{project.tryButtonText}</Button>{' '}
-                <Button href={project.codeUrl} target="_blank" rel="noopener noreferrer" style={{ color: accentColor[index % accentColor.length], textDecoration: 'none', width: isBigScreen ? '300px' : isLandscape ? '250px' : isMediumScreen ? '50%' : '75%', fontSize: isLandscape ? '0.8rem' : '1rem' }} variant="link" size="lg"><b>{project.codeButtonText}</b></Button>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: isLandscape ? "center" : "",
+                  justifyContent: isLandscape ? "center" : "",
+                  marginTop: isLandscape ? "" : "50px",
+                }}
+              >
+                <Button
+                  href={project.mediaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: buttonColors[index % buttonColors.length],
+                    borderColor: buttonColors[index % buttonColors.length],
+                    color: buttonTextColors[index % buttonTextColors.length],
+                    width: isBigScreen
+                      ? "300px"
+                      : isLandscape
+                      ? "250px"
+                      : isMediumScreen
+                      ? "50%"
+                      : "75%",
+                    fontSize: isLandscape ? "0.8rem" : "1rem",
+                  }}
+                  variant="primary"
+                  size="lg"
+                >
+                  {project.tryButtonText}
+                </Button>{" "}
+                <Button
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: accentColor[index % accentColor.length],
+                    textDecoration: "none",
+                    width: isBigScreen
+                      ? "300px"
+                      : isLandscape
+                      ? "250px"
+                      : isMediumScreen
+                      ? "50%"
+                      : "75%",
+                    fontSize: isLandscape ? "0.8rem" : "1rem",
+                  }}
+                  variant="link"
+                  size="lg"
+                >
+                  <b>{project.codeButtonText}</b>
+                </Button>
               </div>
             </div>
-            <div style={{ width: isBigScreen ? '60%' : '100%', flex: isBigScreen ? '1' : 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', background: accentColor[index % accentColor.length]}}>
+            <div
+              style={{
+                width: isBigScreen ? "60%" : "100%",
+                flex: isBigScreen ? "1" : "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "hidden",
+                background: accentColor[index % accentColor.length],
+              }}
+            >
               {!isGifLoaded && <p>Wird geladen...</p>}
-              <img style={{ width: '90%', objectFit: 'contain', height: isBigScreen ? '450px' : '170px', display: isGifLoaded ? 'block' : 'none' }} src={project.gifVideo} onClick={() => handleImageClick(project.gifVideo)} onLoad={handleGifLoad}/>
+              <img
+                style={{
+                  width: "90%",
+                  objectFit: "contain",
+                  height: isBigScreen ? "450px" : "170px",
+                  display: isGifLoaded ? "block" : "none",
+                }}
+                src={project.gifVideo}
+                onClick={() => handleImageClick(project.gifVideo)}
+                onLoad={handleGifLoad}
+              />
             </div>
-          </div> 
+          </div>
         </div>
       ))}
 
       {showOverlay && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-          backgroundColor: 'black', display: 'flex', justifyContent: 'center',
-          alignItems: 'center', zIndex: 1000
-        }}
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "black",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
           onClick={handleCloseOverlay}
         >
-          <img src={selectedImage} alt="Project Preview" style={{ width: '95%', maxHeight: '95%', objectFit: 'contain' }} />
+          <img
+            src={selectedImage}
+            alt="Project Preview"
+            style={{ width: "95%", maxHeight: "95%", objectFit: "contain" }}
+          />
         </div>
       )}
 
       {/* Impressum */}
-      <div style={{ backgroundColor: 'black', color: 'white', height: isLandscape ? '15vh' : '9vh', display: 'flex', justifyContent: 'space-evenly', alignItems: 'baseline' }}>
-            <h2 style={{ fontSize: '0.7rem'}}>Impressum:</h2>
-                <p style={{ fontSize: '0.5rem'}}>Jasmin Raith</p><br />
-                <p style={{ fontSize: '0.5rem'}}>Kämpferstraße 19<br />
-                80937 München</p> <br />
-
-                <p style={{ fontSize: '0.5rem'}}>Telefon: 01788242794<br />
-                E-Mail: jasminraith@icloud.com</p>
+      <div
+        style={{
+          backgroundColor: "black",
+          color: "white",
+          height: isLandscape ? "15vh" : "9vh",
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "baseline",
+        }}
+      >
+        <h2 style={{ fontSize: "0.7rem" }}>Impressum:</h2>
+        <p style={{ fontSize: "0.5rem" }}>Jasmin Raith</p>
+        <br />
+        <p style={{ fontSize: "0.5rem" }}>
+          Kämpferstraße 19
+          <br />
+          80937 München
+        </p>{" "}
+        <br />
+        <p style={{ fontSize: "0.5rem" }}>
+          Telefon: 01788242794
+          <br />
+          E-Mail: jasminraith@icloud.com
+        </p>
       </div>
     </>
   );
