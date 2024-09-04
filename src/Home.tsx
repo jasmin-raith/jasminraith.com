@@ -72,6 +72,28 @@ function Home() {
 
   const projectPreviews: any[] = [
     {
+      id: "match-my-size",
+      projectName: "Match My Size",
+      projectMadeWith: "Squarespace, Responsive",
+      tryButtonText: "Jetzt ansehen",
+      mediaUrl: "https://matchmysize.squarespace.com/",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/match-my-size-squarespace/Match%20My%20Size.gif?raw=true",
+    },
+    {
+      id: "exact-match",
+      projectName: "Exact Match Mockup",
+      projectMadeWith: "Figma, Components, UX/UI, Design",
+      tryButtonText: "Jetzt ansehen",
+      mediaUrl:
+        "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
+      codeButtonText: "Übersicht ansehen",
+      codeUrl:
+        "https://www.figma.com/design/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?m=dev&node-id=0-1&t=c5mwxNX5LclzQkJ3-1",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
+    },
+    {
       id: "fancy-counter",
       projectName: "Fancy Counter",
       projectMadeWith: "React",
@@ -116,19 +138,6 @@ function Home() {
         "https://www.figma.com/design/nDjJmsPiMIXRWlpeaWmMFz/Virtueller-Dm-Shop?m=dev&node-id=0-1&t=VfsQjOwoYUHwAln9-1",
       gifVideo:
         "https://github.com/jasmin-raith/media/blob/main/concept-idea-virtual-dm-shop/concept-idea-virtual-dm-shop.gif?raw=true",
-    },
-    {
-      id: "exact-match",
-      projectName: "Exact Match Mockup",
-      projectMadeWith: "Figma, Components, UX/UI, Design",
-      tryButtonText: "Jetzt ansehen",
-      mediaUrl:
-        "https://www.figma.com/proto/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?page-id=0%3A1&type=design&node-id=1-2&viewport=-445%2C403%2C0.29&t=ixUvjr69OJzp4P4S-1&scaling=scale-down&starting-point-node-id=1%3A2",
-      codeButtonText: "Übersicht ansehen",
-      codeUrl:
-        "https://www.figma.com/design/mDlUyNjnF3FCrsJJ6zYTQ6/Exact-Match?m=dev&node-id=0-1&t=c5mwxNX5LclzQkJ3-1",
-      gifVideo:
-        "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
     },
     {
       id: "ring-of-fire",
