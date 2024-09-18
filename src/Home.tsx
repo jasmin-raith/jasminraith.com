@@ -94,6 +94,17 @@ function Home() {
         "https://github.com/jasmin-raith/media/blob/main/exact-match/exact-match.gif?raw=true",
     },
     {
+      id: "word-analytics",
+      projectName: "Word Analytics",
+      projectMadeWith: "React",
+      tryButtonText: "Jetzt ausprobieren",
+      mediaUrl: "https://word-analytics.vercel.app/",
+      codeButtonText: "Code ansehen",
+      codeUrl: "https://github.com/jasmin-raith/word-analytics",
+      gifVideo:
+        "https://github.com/jasmin-raith/media/blob/main/word-analytics/word-analytics.gif?raw=true",
+    },
+    {
       id: "fancy-counter",
       projectName: "Fancy Counter",
       projectMadeWith: "React",
