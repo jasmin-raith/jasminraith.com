@@ -72,15 +72,6 @@ function Home() {
 
   const projectPreviews: any[] = [
     {
-      id: "match-my-size",
-      projectName: "Match My Size",
-      projectMadeWith: "Squarespace, Responsive",
-      tryButtonText: "Jetzt ansehen",
-      mediaUrl: "https://matchmysize.squarespace.com/",
-      gifVideo:
-        "https://github.com/jasmin-raith/media/blob/main/match-my-size-squarespace/Match%20My%20Size.gif?raw=true",
-    },
-    {
       id: "exact-match",
       projectName: "Exact Match Mockup",
       projectMadeWith: "Figma, Components, UX/UI, Design",
